@@ -67,7 +67,7 @@ dockerBuildAndPush() {
   docker build -t "${IMAGE}" "${DIR}"
 
   echo "Pusing ${IMAGE}"
-  docker push "${IMAGE}"
+  docker push docker.pkg.github.com/"${image}"/base
 
   if [[ -n "$EXTRA_DOCKER_TAG" ]]; then
     local EXTRA_IMAGE="${REPO}:${EXTRA_DOCKER_TAG}"
