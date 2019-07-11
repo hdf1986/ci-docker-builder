@@ -64,11 +64,11 @@ dockerBuildAndPush() {
   local IMAGE="${REPO}:${DOCKER_TAG}"
 
   echo "Building image ${IMAGE} from ${DIR}"
-  docker build -t "${IMAGE}" "${DIR}"
+  docker build -t docker.pkg.github.com/"${REPO}"/base:"${DOCKER_TAG}" "${DIR}"
 
   echo "Pusing ${IMAGE}"
-  echo docker.pkg.github.com/"${REPO}"/base
-  docker push docker.pkg.github.com/"${REPO}"/base
+  echo docker.pkg.github.com/"${REPO}"/base:"${DOCKER_TAG}"
+  docker push docker.pkg.github.com/"${REPO}"/base:"${DOCKER_TAG}"
 
   if [[ -n "$EXTRA_DOCKER_TAG" ]]; then
     local EXTRA_IMAGE="${REPO}:${EXTRA_DOCKER_TAG}"
