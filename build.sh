@@ -64,7 +64,7 @@ dockerBuildAndPush() {
   local IMAGE="${REPO}:${DOCKER_TAG}"
 
   echo "Building image ${IMAGE} from ${DIR}"
-  docker build -t docker.pkg.github.com/"${REPO}"/base:"${DOCKER_TAG}" "${DIR}"
+  docker build -t docker.pkg.github.com/"${REPO}"/"${DOCKER_NAME}":"${DOCKER_TAG}" "${DIR}"
 
   echo "Pusing ${IMAGE}"
   echo docker.pkg.github.com/"${REPO}"/base:"${DOCKER_TAG}"
