@@ -68,5 +68,5 @@ dockerBuildAndPush() {
 
   echo "Pusing ${IMAGE}"
   echo docker.pkg.github.com/"${REPO}"/base:"${DOCKER_TAG}"
-  docker push docker.pkg.github.com/"${REPO}"/base:"${DOCKER_TAG}"
+  docker push docker.pkg.github.com/"${REPO}"/"${DOCKER_NAME}":"${DOCKER_TAG}"
 }
