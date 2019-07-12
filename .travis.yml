@@ -5,3 +5,5 @@ script:
   - shellcheck -x travis-build-test.sh -x circle-build-test.sh ../build.sh
   - ./travis-build-test.sh
   - ./circle-build-test.sh
+notifications:
+  email: false
