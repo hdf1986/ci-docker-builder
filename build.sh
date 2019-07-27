@@ -17,6 +17,11 @@ dockerSetup() {
     case $BRANCH in
       master)
         VERSION="dev-${COMMIT::7} (build $BUILD_NUMBER)"
+        DOCKER_TAG="latest"
+        ;;
+      
+      staging)
+        VERSION="dev-${COMMIT::7} (build $BUILD_NUMBER)"
         DOCKER_TAG="dev"
         ;;
 
